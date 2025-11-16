@@ -116,7 +116,7 @@ class StudyProgramme {
 
     public void calculateEnrollmentNumbers() {
         List<Applicant> sortedApplicants = applicants.stream()
-                .sorted(Comparator.comparingDouble(Applicant::calculatePoints).reversed())
+                .sorted(Comparator.compare(Applicant::calculatePoints).reversed())
                 .collect(Collectors.toList());
 
         enrolledInPublicQuota = 0;
